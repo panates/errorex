@@ -5,7 +5,7 @@ const erx = require('../');
 describe('ErrorEx', function() {
 
   it('test ErrorEx', function(done) {
-    var error = new erx.ErrorEx('Error message. %s', 'ok');
+    var error = erx.ErrorEx('Error message. %s', 'ok');
     assert.equal(error.message, 'Error message. ok');
     assert.equal(error.name, 'Error');
     assert.ok(error instanceof Error);
@@ -15,7 +15,7 @@ describe('ErrorEx', function() {
   });
 
   it('test ErrorEx.set()', function(done) {
-    var error = new erx.ErrorEx('message');
+    var error = erx.ErrorEx('message');
     error.set('prm1', 1);
     error.setCode(12345);
     error.setDetails('details');
@@ -26,7 +26,7 @@ describe('ErrorEx', function() {
   });
 
   it('test ArgumentError', function(done) {
-    var error = new erx.ArgumentError('Error message. %s', 'ok');
+    var error = erx.ArgumentError('Error message. %s', 'ok');
     error.setArgumentIndex(1);
     error.setArgumentName('arg1');
     assert.equal(error.message, 'Error message. ok');
@@ -40,7 +40,7 @@ describe('ErrorEx', function() {
   });
 
   it('test RangeError', function(done) {
-    var error = new erx.RangeError('Error message. %s', 'ok');
+    var error = erx.RangeError('Error message. %s', 'ok');
     error.setMinValue(1);
     error.setMaxValue(5);
     assert.equal(error.message, 'Error message. ok');
@@ -54,7 +54,7 @@ describe('ErrorEx', function() {
   });
 
   it('test HttpError', function(done) {
-    var error = new erx.HttpError('Error message. %s', 'ok');
+    var error = erx.HttpError('Error message. %s', 'ok');
     error.setStatus(404);
     assert.equal(error.message, 'Error message. ok');
     assert.ok(error instanceof Error);
@@ -66,7 +66,7 @@ describe('ErrorEx', function() {
   });
 
   it('test HttpClientError', function(done) {
-    var error = new erx.HttpClientError('Error message. %s', 'ok');
+    var error = erx.HttpClientError('Error message. %s', 'ok');
     assert.equal(error.message, 'Error message. ok');
     assert.ok(error instanceof Error);
     assert.ok(error instanceof erx.ErrorEx);
@@ -78,7 +78,7 @@ describe('ErrorEx', function() {
   });
 
   it('test HttpServerError', function(done) {
-    var error = new erx.HttpServerError('Error message. %s', 'ok');
+    var error = erx.HttpServerError('Error message. %s', 'ok');
     assert.equal(error.message, 'Error message. ok');
     assert.ok(error instanceof Error);
     assert.ok(error instanceof erx.ErrorEx);
