@@ -102,4 +102,14 @@ describe('ErrorEx', function() {
     done();
   });
 
+  it('test ValidateError', function(done) {
+    var error = erx.ValidateError('Error message. %s', 'ok');
+    assert.equal(error.message, 'Error message. ok');
+    assert.ok(error instanceof Error);
+    assert.ok(error instanceof erx.ErrorEx);
+    assert.ok(error instanceof erx.ValidateError);
+    assert.equal(error.name, 'ValidateError');
+    done();
+  });
+
 });
