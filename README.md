@@ -45,7 +45,12 @@ class MyError extends ErrorEx {
 }
 
 
-throw new MyError('My message %d', 10).setFoo('fooooo');
+throw new MyError('My message %d', 10)
+.setFoo('fooooo')
+.set({
+  prop1: 1,
+  prop2: 2
+});
 ```
 
 ## Extending custom error classes in ES5

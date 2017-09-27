@@ -14,11 +14,24 @@ describe('ErrorEx', function() {
     done();
   });
 
-  it('test ErrorEx.set()', function(done) {
+  it('test ErrorEx.set(key, value)', function(done) {
     var error = erx.ErrorEx('message');
     error.set('prm1', 1);
     error.setCode(12345);
     error.setDetails('details');
+    assert.equal(error.prm1, 1);
+    assert.equal(error.code, 12345);
+    assert.equal(error.details, 'details');
+    done();
+  });
+
+  it('test ErrorEx.set(object)', function(done) {
+    var error = erx.ErrorEx('message');
+    error.set({
+      prm1: 1,
+      code: 12345,
+      details: 'details'
+    });
     assert.equal(error.prm1, 1);
     assert.equal(error.code, 12345);
     assert.equal(error.details, 'details');
