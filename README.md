@@ -57,7 +57,7 @@ throw new MyError('My message %d', 10)
 ```js
 
 function MyError() {
-  MyError.apply(this, arguments);
+  ErrorEx.apply(this, arguments);
   this.myproperty = 1000;
 }
 MyError.prototype = Object.create(ErrorEx.prototype);
