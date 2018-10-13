@@ -50,14 +50,12 @@ describe('ErrorEx', function() {
   it('should get call stack', function() {
     const calls = ErrorEx.getCallStack();
     assert.equal(calls[0], path.resolve(__dirname, '../lib/errorex.js'));
-    assert.equal(calls[1], path.resolve(__filename));
     assert(calls.length >= 5);
   });
 
   it('should get call stack without node internals', function() {
     const calls = ErrorEx.getCallStack(true);
     assert.equal(calls[0], path.resolve(__dirname, '../lib/errorex.js'));
-    assert.equal(calls[1], path.resolve(__filename));
     assert(calls.length < 5);
   });
 
