@@ -1,7 +1,7 @@
 {
   "name": "errorex",
   "description": "'Extensible Error Class' implementation and predefined additional error types for javascript",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "author": "Panates Ltd.",
   "contributors": [
     "Eray Hanoglu <e.hanoglu@panates.com>"
